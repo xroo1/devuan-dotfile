@@ -1,0 +1,220 @@
+-- return {
+--   {
+--     "roo1_dark_grey",
+--     dir = "~/.config/nvim/colors",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       vim.cmd.colorscheme("roo1_dark_grey")
+--
+--       -- Garantir fundos escuros consistentes
+--       vim.api.nvim_set_hl(0, "Normal", { bg = "#191919", fg = "#c0c0c0" })
+--       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#242424", fg = "#c0c0c0" })
+--       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#242424", fg = "#393939" })
+--
+--       -- Corrigir áreas pretas comuns
+--       vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#393939", bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "CursorLine", { bg = "#212121" })
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "#242424", fg = "#c0c0c0" })
+--
+--       -- Integração com plugins
+--       vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#242424" })
+--       vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#242424", fg = "#393939" })
+--       vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1e1e1e", fg = "#c0c0c0" })
+--
+--       vim.api.nvim_set_hl(0, "WinBar", {
+--         bg = "#191919",  -- Cor de fundo igual ao Normal
+--         fg = "#c0c0c0",  -- Cor do texto igual ao Normal
+--         bold = true      -- Mantém o texto em negrito
+--       })
+--
+--       vim.api.nvim_set_hl(0, "WinBarNC", {
+--         bg = "#191919",  -- Mesmo fundo
+--         fg = "#777777",  -- Texto mais suave para janelas não ativas
+--         bold = false     -- Sem negrito
+--       })
+--     end
+--
+--   }
+-- }
+
+
+return {
+  {
+    "roo1",
+    dir = "~/.config/nvim/colors",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("roo1")
+    end
+  }
+}
+
+-- return {
+--   {
+--     "roo1_771",
+--     dir = "~/.config/nvim/colors",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       vim.cmd.colorscheme("roo1_771")
+--
+--       -- Ajustes para manter consistência com o esquema
+--       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", fg = "#c0c0c0" })
+--       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#242424", fg = "#c0c0c0" })
+--       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#242424", fg = "#3a3a3a" })
+--
+--       -- Ajustes para áreas de divisória e cursor
+--       vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#3a3a3a", bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "#242424", fg = "#c0c0c0" })
+--
+--       -- Integração com plugins
+--       vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#242424" })
+--       vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#242424", fg = "#3a3a3a" })
+--       vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1e1e1e", fg = "#c0c0c0" })
+--
+--       -- Ajustes para números de linha
+--       vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE", fg = "#36393f" })
+--       vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NONE", fg = "#c0c0c0" })
+--
+--       -- Ajustes para coluna de sinais e non-text
+--       vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE", fg = "#c0c0c0" })
+--       vim.api.nvim_set_hl(0, "NonText", { bg = "NONE", fg = "#3a3a3a" })
+--
+--       -- Barra de janela
+--       vim.api.nvim_set_hl(0, "WinBar", {
+--         bg = "NONE",      -- Fundo transparente para manter o estilo
+--         fg = "#c0c0c0",   -- Cor do texto
+--         bold = true       -- Texto em negrito
+--       })
+--
+--       vim.api.nvim_set_hl(0, "WinBarNC", {
+--         bg = "NONE",      -- Fundo transparente
+--         fg = "#36393f",   -- Texto mais suave para janelas não ativas
+--         bold = false      -- Sem negrito
+--       })
+--     end
+--   }
+-- }
+
+
+
+--
+-- return {
+--   {
+--     "roo1_urxvt_grey", 
+--     dir = "~/.config/nvim/colors",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--       vim.cmd.colorscheme("roo1_urxvt_grey")
+--
+--       -- FUNDOS PRINCIPAIS
+--       vim.api.nvim_set_hl(0, "Normal", { bg = "#1B1D1E", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1B1D1E", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1B1D1E", fg = "#5D5D5D" })
+--
+--       -- ÁREA DO BUFFER
+--       vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "#1B1D1E", fg = "#1B1D1E" })
+--       vim.api.nvim_set_hl(0, "NonText", { bg = "#1B1D1E", fg = "#5D5D5D" })
+--
+--       -- COLUNAS E LINHAS
+--       vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#242728" })  -- Coluna destacada
+--       vim.api.nvim_set_hl(0, "CursorLine", { bg = "#242728" })   -- Linha atual
+--       vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#242728" }) -- Coluna atual
+--
+--       -- HEIRLINE (statusline) - TONS DA MESMA FAMÍLIA
+--       vim.api.nvim_set_hl(0, "StatusLine", { bg = "#242728", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#1F2122", fg = "#6D6D6D" })
+--
+--       -- Componentes do Heirline
+--       vim.api.nvim_set_hl(0, "HeirlineInactive", { bg = "#1F2122", fg = "#6D6D6D" })
+--       vim.api.nvim_set_hl(0, "HeirlineNormal", { bg = "#242728", fg = "#FFFFFF" })
+--
+--       -- Modos do Heirline - CORES VIVAS
+--       vim.api.nvim_set_hl(0, "HeirlineVisual", { bg = "#FF2965", fg = "#1B1D1E", bold = true })   -- Vermelho vibrante
+--       vim.api.nvim_set_hl(0, "HeirlineInsert", { bg = "#2DFF54", fg = "#1B1D1E", bold = true })   -- Verde vibrante
+--       vim.api.nvim_set_hl(0, "HeirlineCommand", { bg = "#D8A7FF", fg = "#1B1D1E", bold = true })  -- Lilás suave
+--       vim.api.nvim_set_hl(0, "HeirlineReplace", { bg = "#FF2965", fg = "#1B1D1E", bold = true })  -- Vermelho vibrante
+--       vim.api.nvim_set_hl(0, "HeirlineNormal", { bg = "#429FFF", fg = "#1B1D1E", bold = true })   -- Azul vibrante
+--
+--       -- COLUNA LATERAL - TONS DA MESMA FAMÍLIA
+--       vim.api.nvim_set_hl(0, "LineNr", { bg = "#242728", fg = "#6D6D6D" })
+--       vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#242728", fg = "#429FFF", bold = true }) -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "SignColumn", { bg = "#242728", fg = "#5D5D5D" })
+--       vim.api.nvim_set_hl(0, "FoldColumn", { bg = "#242728", fg = "#5D5D5D" })
+--
+--       -- ABAS SUPERIORES
+--       vim.api.nvim_set_hl(0, "TabLine", { bg = "#1F2122", fg = "#6D6D6D" })
+--       vim.api.nvim_set_hl(0, "TabLineSel", { bg = "#242728", fg = "#429FFF", bold = true }) -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#1B1D1E", fg = "#1B1D1E" })
+--
+--       -- BARRA DE JANELA SUPERIOR
+--       vim.api.nvim_set_hl(0, "WinBar", { bg = "#1B1D1E", fg = "#FFFFFF", bold = true })
+--       vim.api.nvim_set_hl(0, "WinBarNC", { bg = "#1B1D1E", fg = "#6D6D6D", bold = false })
+--
+--       -- DIVISÓRIAS
+--       vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#5D5D5D", bg = "#1B1D1E" })
+--       vim.api.nvim_set_hl(0, "VertSplit", { fg = "#5D5D5D", bg = "#1B1D1E" })
+--
+--       -- MENUS SUSPENSOS
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "#242728", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#429FFF", fg = "#1B1D1E" }) -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#1F2122" })
+--       vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#5D5D5D" })
+--
+--       -- PLUGINS
+--       vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#242728", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#242728", fg = "#5D5D5D" })
+--       vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#429FFF", fg = "#1B1D1E" }) -- Azul vibrante
+--
+--       vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1B1D1E", fg = "#FFFFFF" })
+--       vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { fg = "#5D5D5D", bg = "#1B1D1E" })
+--       vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "#1B1D1E", fg = "#1B1D1E" })
+--
+--       -- DESTAQUES - CORES VIVAS
+--       vim.api.nvim_set_hl(0, "Search", { bg = "#FF2965", fg = "#FFFFFF" }) -- Vermelho vibrante com texto branco
+--       vim.api.nvim_set_hl(0, "IncSearch", { bg = "#429FFF", fg = "#1B1D1E" }) -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "Visual", { bg = "#429FFF", fg = "#1B1D1E" }) -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "MatchParen", { bg = "#5D5D5D", fg = "#429FFF" })
+--
+--       -- GIT - CORES VIVAS
+--       vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#2DFF54", bg = "#242728" }) -- Verde vibrante
+--       vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#FFB347", bg = "#242728" }) -- Laranja suave
+--       vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#FF2965", bg = "#242728" }) -- Vermelho vibrante
+--
+--       -- LSP - CORES VIVAS
+--       vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#FF2965" }) -- Vermelho vibrante
+--       vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#FFB347" })  -- Laranja suave
+--       vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#429FFF" })  -- Azul vibrante
+--       vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = "#2DFF54" })  -- Verde vibrante
+--
+--       -- Destaques de sintaxe com cores vivas
+--       vim.api.nvim_set_hl(0, "Error", { fg = "#FF2965" })
+--       vim.api.nvim_set_hl(0, "Warning", { fg = "#FFB347" })
+--       vim.api.nvim_set_hl(0, "Todo", { fg = "#FF2965", bg = "NONE", bold = true })
+--
+--       -- Cursor e elementos interativos
+--       vim.api.nvim_set_hl(0, "Cursor", { bg = "#429FFF", fg = "#1B1D1E" })
+--
+--       -- DIFERENÇAS
+--       vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#1B1D1E", fg = "#2DFF54" })
+--       vim.api.nvim_set_hl(0, "DiffChange", { bg = "#1B1D1E", fg = "#429FFF" })
+--       vim.api.nvim_set_hl(0, "DiffDelete", { bg = "#1B1D1E", fg = "#FF2965" })
+--       vim.api.nvim_set_hl(0, "DiffText", { bg = "#242728", fg = "#429FFF" })
+--
+--       -- Forçar aplicação dos fundos principais
+--       vim.cmd("highlight Normal guibg=#1B1D1E guifg=#FFFFFF")
+--       vim.cmd("highlight ColorColumn guibg=#242728")
+--       vim.cmd("highlight CursorLine guibg=#242728")
+--       vim.cmd("highlight LineNr guibg=#242728 guifg=#6D6D6D")
+--       vim.cmd("highlight CursorLineNr guibg=#242728 guifg=#429FFF")
+--       vim.cmd("highlight SignColumn guibg=#242728 guifg=#5D5D5D")
+--       vim.cmd("highlight StatusLine guibg=#242728 guifg=#FFFFFF")
+--       vim.cmd("highlight StatusLineNC guibg=#1F2122 guifg=#6D6D6D")
+--       vim.cmd("highlight Pmenu guibg=#242728 guifg=#FFFFFF")
+--     end
+--   }
+-- }

@@ -1,0 +1,57 @@
+--- st.c
++++ st.c
+@@ -1061,53 +1051,13 @@ tswapscreen(void)
+ }
+ 
+ void
+-kscrolldown(const Arg* a)
+-{
+-	int n = a->i;
+-
+-	if (n < 0)
+-		n = term.row + n;
+-
+-	if (n > term.scr)
+-		n = term.scr;
+-
+-	if (term.scr > 0) {
+-		term.scr -= n;
+-		selscroll(0, -n);
+-		tfulldirt();
+-	}
+-}
+-
+-void
+-kscrollup(const Arg* a)
+-{
+-	int n = a->i;
+-
+-	if (n < 0)
+-		n = term.row + n;
+-
+-	if (term.scr <= HISTSIZE-n) {
+-		term.scr += n;
+-		selscroll(0, n);
+-		tfulldirt();
+-	}
+-}
+-
+-void
+-tscrolldown(int orig, int n, int copyhist)
++tscrolldown(int orig, int n)
+ {
+ 	int i;
+ 	Line temp;
+ 
+ 	LIMIT(n, 0, term.bot-orig+1);
+ 
+-	if (copyhist) {
+-		term.histi = (term.histi - 1 + HISTSIZE) % HISTSIZE;
+-		temp = term.hist[term.histi];
+-		term.hist[term.histi] = term.line[term.bot];
+-		term.line[term.bot] = temp;
+-	}
+-
+ 	tsetdirt(orig, term.bot-n);
+ 	tclearregion(0, term.bot-n+1, term.col-1, term.bot);
+ 

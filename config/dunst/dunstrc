@@ -1,0 +1,36 @@
+cat > ~/.config/dunst/dunstrc << 'EOF'
+[global]
+    origin = top-right
+    font = Hack Nerd Font Regular 9.0
+    corner_radius = 6
+    scale = 0
+    separator_height = 3
+    padding = 16
+    horizontal_padding = 16
+    separator_color = auto
+    format = "<b>%s</b>\n<span foreground='#d0d0d0'>%b</span>"
+    vertical_alignment = center
+    alignment = left
+    hide_duplicate_count = false
+    stack_duplicates = true
+    ignore_newline = no
+
+# Tema Dark Modern com borda sutil
+[urgency_low]
+    background = "#1B1D1E"
+    foreground = "#d0d0d0"
+    frame_color = "#2D2F30"  # Borda muito escura/sutil
+    timeout = 5
+
+[urgency_normal]
+    background = "#1B1D1E"
+    foreground = "#d0d0d0"
+    frame_color = "#2D2F30"  # Borda muito escura/sutil
+    timeout = 5
+
+[urgency_critical]
+    background = "#1B1D1E"
+    foreground = "#ffffff"
+    frame_color = "#ff2965"  # Borda vermelha apenas para crítico
+    timeout = 120
+EOF

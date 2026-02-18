@@ -1,0 +1,45 @@
+# i3blocks configuration inspired by i3status
+
+[wireless]
+command=ip route | grep '^default' | awk '{print $9}'
+interval=10
+label=[+]
+color=#00ff00
+
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery.sh
+interval=30
+label= [+]
+color=#00f00
+
+[brightness]
+command=$HOME/.config/i3blocks/scripts/brightnessctl.sh
+interval=1
+label=
+
+[disk]
+command=df -h / | awk 'NR==2 { print " ~",$4 }'
+interval=30
+label=
+
+# [load]
+# command=uptime | awk -F'load average:' '{ print "LOAD AV","(" $2 ")"}'
+# interval=10
+
+
+# [memory]
+# command=free -h | awk '/Mem.:/ {print " USED " " ~ " $3, " / " " FREE " " ~ " $7}' 
+# interval=10
+
+
+[volume]
+command=$HOME/.config/i3blocks/scripts/get-volume.sh
+interval=1
+label=
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+label=  
+
+
