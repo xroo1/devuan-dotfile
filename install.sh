@@ -3,42 +3,73 @@ C2='\033[32m'
 C0='\033[0m'
 
 
-echo -e "\n${C2}Iniciando instalação do dotfile ${C0}\n"
-echo -e "\n${C2}Instalando Depedencias  ${C0}\n"
-sudo apt install brightnessctl pulseaudio-utils xinput feh scrot imagemagick xclip neovim feh dunst i3lock 
+install_dependencies () {
+  echo -e "\n${C2}[+]${C0} Iniciando instalação do dotfile "
+  echo -e "${C2}[+]${C0} Instalando Depedencias "
+  sudo apt install brightnessctl pulseaudio-utils xinput feh scrot imagemagick xclip neovim feh dunst i3lock ranger  
+}
 
-echo -e "\n${C2}[*]${C0} Copiando arquivos"
-cp -v fonts -r ~/.fonts
-cp -v config/* -r ~/.config/
-cp -v script -r ~/.scripts
+install_st () {
+  echo -e "\n${C2}[+]${C0} Instalando Depedencias do ST."
+  sudo apt install libx11-dev libxft-dev libxext-dev
 
-echo -e "\n${C2}[*]${C0} Instalando fonts"
-fc-cache -fv ~/.fonts
+  echo -e "\n${C2}[+]${C0} Compilando o ST Term"
+  cd ./config/st/
+  sudo make clean install 
+}
+
+setup_ranger_default () {
+  echo -e "\n${C2}[+]${C0} Adicionando o Ranger como explorador de arquivos padrao."
+  mkdir -p ~/.local/share/applications
+
+  DESKTOP_FILE="$HOME/.local/share/applications/ranger-st.desktop"
+
+  
+  echo -e "${C2}[*]${C0} Criando arquivo .desktop com configurações."
+cat <<EOF > "$DESKTOP_FILE"
+[Desktop Entry]
+Type=Application
+Name=Ranger (st)
+Comment=Abrir Ranger no terminal st
+Exec=st -e ranger %u
+Icon=utilities-terminal
+Terminal=false
+MimeType=inode/directory;
+EOF
+
+  echo -e "${C2}[*]${C0} Dando permicao de executavel para arquivos de configuração"
+  chmod +x "$DESKTOP_FILE"
+
+  echo -e "${C2}[*]${C0} Definindo o Ranger como padrao para abrir diretorios."
+  # 5. Definir o Ranger (via st) como o padrão para abrir pastas (diretórios)
+  xdg-mime default ranger-st.desktop inode/directory
+}
 
 
-echo -e "\n${C2}[*]${C0} Dando permicao de executavel para arquivos de configuração"
-chmod +x ~/.config/i3blocks/scripts/*
+deploy_dots () {
+  echo -e "\n${C2}[+]${C0} Copiando arquivos"
+  cp -v fonts -r ~/.fonts
+  cp -v config/* -r ~/.config/
+  cp -v script -r ~/.scripts
 
-echo -e "\n${C2}[*]${C0} Adicionando Wallpaper "
-feh --bg-scale '/home/roo1/Downloads/devuan-dotfile/config/backgrounds/background.png'
+  echo -e "${C2}[*]${C0} Instalando fonts"
+  fc-cache -fv ~/.fonts
 
+  echo -e "${C2}[*]${C0} Dando permicao de executavel para arquivos de configuração"
+  chmod +x ~/.config/i3blocks/scripts/*
 
-echo -e "\n${C2}[*]${C0} Deseja adicionar e usar o ST TERM ao /usr/bin/ ? "
-
-echo -e "${C2}[*]${C0} Digite 1 para sim e 0 para nao "
-read opcao 
-if [ "$opcao" == 1 ]; then 
-  sudo cp -v config/st/st -r /usr/bin/
-  sudo chmod -v +x /usr/bin/st
-else
-  echo -e "\n${C2}[*]${C0} Escolha uma terminal (digite o executavel, ex: xfce4-terminal) :  "
-  read term
-  ./script/mudar.sh -i "exec xfce4-terminal" -o "exec $term"
+  echo -e "${C2}[+]${C0} Adicionando Wallpaper "
+  feh --bg-scale '/home/roo1/Downloads/devuan-dotfile/config/backgrounds/076.png'
+}
 
 
-  echo -e "\n${C2}[*]${C0} verificando terminal  "
-  ./script/busca.sh -s "exec $term"
-  ./script/busca.sh -s "set \$term $term"
-fi
+main () {
+  install_dependencies
+  install_st
+  setup_ranger_default
+  deploy_dots
+  echo -e "\n${C2}[+]${C0} Instalação finalizada com sucesso  \n"
+}
 
-echo -e "\n${C2}[+]${C0} Instalação finalizada com sucesso  \n"
+
+main
