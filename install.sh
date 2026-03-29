@@ -2,6 +2,15 @@
 C2='\033[32m'
 C0='\033[0m'
 
+banner() {
+  echo -e """\033[1;32m              
+ ______               ____   
+|   __ \.-----.-----.|_   |  
+|      <|  _  |  _  | _|  |_ 
+|___|__||_____|_____||______|
+\033[0m
+  """
+}
 
 install_dependencies () {
   echo -e "\n${C2}[+]${C0} Iniciando instalação do dotfile "
@@ -64,6 +73,7 @@ deploy_dots () {
 
 
 main () {
+  banner
   install_dependencies
   install_st
   setup_ranger_default
