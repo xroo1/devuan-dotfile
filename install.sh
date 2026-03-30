@@ -27,6 +27,12 @@ install_st () {
   sudo make clean install 
 }
 
+install_kew () {
+  sleep 1 
+  echo -e "\n${C2}[+]${C0} Instalando e Compilando o player de musica Kew "
+  sudo apt install kew
+}
+
 setup_ranger_default () {
   echo -e "\n${C2}[+]${C0} Adicionando o Ranger como explorador de arquivos padrao."
   mkdir -p ~/.local/share/applications
@@ -76,6 +82,7 @@ main () {
   banner
   install_dependencies
   install_st
+  install_kew
   setup_ranger_default
   deploy_dots
   echo -e "\n${C2}[+]${C0} Instalação finalizada com sucesso  \n"
