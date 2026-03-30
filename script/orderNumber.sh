@@ -22,7 +22,6 @@ renomear_arquivos() {
 main() {
     echo -e "\033[1;32m[+]\033[0m Iniciando renomeação em: $(pwd)"
     
-    # Chama a função de renomear
     renomear_arquivos
     
     echo -e "\033[1;32mConcluído! Total de $(ls -1 | wc -l) arquivos processados.\033[0m]"
